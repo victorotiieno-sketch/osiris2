@@ -12,26 +12,26 @@
      Google grays for text/borders, Material-style soft shadows.
      Primary accent (the "gold-*" slot) = Google blue.
      Secondary accent (the "cyan-*" slot) = Google green. */
-  --gold-rgb: 26, 115, 232;   /* Google Blue #1A73E8 — primary accent */
-  --cyan-rgb: 30, 142, 62;    /* Google Green #1E8E3E — secondary accent */
+  --gold-rgb: 59, 130, 246;   /* Google Blue #1A73E8 — primary accent */
+  --cyan-rgb: 34, 211, 238;    /* Google Green #1E8E3E — secondary accent */
 
   /* ── Core Palette — Google Maps white surfaces ── */
-  --bg-void: #FFFFFF;
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #FFFFFF;
-  --bg-tertiary: #F1F3F4;
-  --bg-panel: rgba(255, 255, 255, 0.98);
-  --bg-panel-solid: #FFFFFF;
+  --bg-void: #060B14;
+  --bg-primary: #080F1C;
+  --bg-secondary: #0B1423;
+  --bg-tertiary: #111E30;
+  --bg-panel: rgba(10, 18, 32, 0.96);
+  --bg-panel-solid: #0B1423;
 
   /* ── Google Blue Primary Accent ── */
-  --gold-primary: #1A73E8;
-  --gold-light: #4285F4;
-  --gold-dim: #1967D2;
+  --gold-primary: #3B82F6;
+  --gold-light: #60A5FA;
+  --gold-dim: #2563EB;
   --gold-glow: rgba(var(--gold-rgb), 0.22);
 
   /* ── Google Green Secondary Accent ── */
-  --cyan-primary: #1E8E3E;
-  --cyan-dim: #188038;
+  --cyan-primary: #22D3EE;
+  --cyan-dim: #0891B2;
   --cyan-glow: rgba(var(--cyan-rgb), 0.16);
 
   /* ── Alert Colors (Google palette) ── */
@@ -45,18 +45,18 @@
   --accent-nuclear: #34A853;
 
   /* ── Borders (Google #DADCE0) ── */
-  --border-primary: rgba(60, 64, 67, 0.14);
-  --border-secondary: rgba(60, 64, 67, 0.08);
-  --border-active: rgba(var(--gold-rgb), 0.5);
+  --border-primary: rgba(148, 163, 184, 0.18);
+  --border-secondary: rgba(148, 163, 184, 0.09);
+  --border-active: rgba(var(--gold-rgb), 0.55);
   --border-cyan: rgba(var(--cyan-rgb), 0.3);
 
   /* ── Text — Google grays ── */
-  --text-primary: #202124;
-  --text-secondary: #5F6368;
-  --text-muted: #80868B;
-  --text-heading: #202124;
-  --text-gold: #1A73E8;
-  --text-cyan: #1E8E3E;
+  --text-primary: #E2E8F0;
+  --text-secondary: #A7B4C8;
+  --text-muted: #718096;
+  --text-heading: #F1F5F9;
+  --text-gold: #60A5FA;
+  --text-cyan: #22D3EE;
 
   /* ── Scrollbar ── */
   --scrollbar-thumb: rgba(60, 64, 67, 0.3);

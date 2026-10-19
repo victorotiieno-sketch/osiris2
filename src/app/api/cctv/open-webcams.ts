@@ -19,7 +19,7 @@ const COUNTRY_NAMES: Record<string, string> = {
   PT: 'Portugal', RO: 'Romania', RS: 'Serbia', RU: 'Russia',
   SE: 'Sweden', SG: 'Singapore', TH: 'Thailand', TR: 'Turkey',
   TT: 'Trinidad and Tobago', TW: 'Taiwan', US: 'United States',
-  UY: 'Uruguay', VN: 'Vietnam', ZA: 'South Africa', XX: 'Unknown',
+  UY: 'Uruguay', VN: 'Vietnam', ZA: 'South Africa', KE: 'Kenya', XX: 'Unknown',
 };
 
 // ── YouTube URL → embed URL ──
@@ -48,14 +48,29 @@ function featureToCamera(feature: any): CctvCamera | null {
   const coords = feature.geometry?.coordinates;
   if (!coords || coords.length < 2) return null;
 
-  const lng = coords[0];
-  const lat = coords[1];
-  if (!lat || !lng) return null;
+  let lng = coords[0];
+  let lat = coords[1];
+  if (lat == null || lng == null) return null;
 
   const urlType: string = p.url_type || '';
   const rawUrl: string = p.url || '';
   const name: string = p.display_name || p.name || 'Webcam';
   const countryCode: string = p.country_code || 'XX';
+
+  // Correct known upstream locality coordinates; these are not exact camera positions.
+  if (countryCode === 'KE' && rawUrl.includes('skylinewebcams.com')) {
+    const place = name.toLowerCase();
+    if (place === 'diani beach, kenya') {
+      lat = -4.2969;
+      lng = 39.5906;
+    } else if (place === 'voi, kenya') {
+      lat = -3.3977;
+      lng = 38.5843;
+    } else if (place === 'watamu beach, kenya') {
+      lat = -3.383333;
+      lng = 39.983333;
+    }
+  }
   const sourceFamily: string = p.source_family || 'unknown';
   const coordQuality: string = p.coordinates_quality || 'country_centroid';
   const status: string = p.status || 'unknown';

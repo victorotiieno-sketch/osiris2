@@ -282,7 +282,7 @@ function OsirisMap({ data, activeLayers, onEntityClick, onMouseCoords, onRightCl
     if (!containerRef.current || mapRef.current) return;
     
     // Select basemap style
-    const styleUrl = 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json';
+    const styleUrl = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 
     const map = new maplibregl.Map({
       container: containerRef.current,
